@@ -21,8 +21,5 @@ func IsPangram(s string) bool {
 	for _, r := range removeNonLowerAlphas(strings.ToLower(s)) {
 		letters[r] = true
 	}
-	if len(letters) == 26 {
-		return true
-	}
-	return false
+	return len(letters) == 26
 }
