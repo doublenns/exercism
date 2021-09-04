@@ -12,10 +12,7 @@ package strain
 type Ints []int
 
 func (si Ints) Keep(f func(int) bool) Ints {
-	if si == nil {
-		return si
-	}
-	result := make([]int, 0)
+	var result Ints
 	for _, v := range si {
 		if f(v) {
 			result = append(result, v)
@@ -25,7 +22,6 @@ func (si Ints) Keep(f func(int) bool) Ints {
 }
 
 func (si Ints) Discard(f func(int) bool) Ints {
-	// Need to understand how this recursion works
 	return si.Keep(func(i int) bool {
 		return !f(i)
 	})
@@ -34,7 +30,7 @@ func (si Ints) Discard(f func(int) bool) Ints {
 type Strings []string
 
 func (ss Strings) Keep(f func(string) bool) Strings {
-	result := make([]string, 0)
+	var result Strings
 	for _, v := range ss {
 		if f(v) {
 			result = append(result, v)
@@ -46,7 +42,7 @@ func (ss Strings) Keep(f func(string) bool) Strings {
 type Lists [][]int
 
 func (ss Lists) Keep(f func([]int) bool) Lists {
-	result := make([][]int, 0)
+	var result Lists
 	for _, v := range ss {
 		if f(v) {
 			result = append(result, v)
