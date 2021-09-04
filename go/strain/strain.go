@@ -7,8 +7,6 @@ the predicate is false.
 This package essentially performs a filter/reject on collections*/
 package strain
 
-// Don't understand why Ints{nil} should return nil for both Ints.Keep() and
-// Ints.Discard() -- based on test cases
 type Ints []int
 
 func (si Ints) Keep(f func(int) bool) Ints {
