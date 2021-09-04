@@ -1,3 +1,5 @@
+// Package pangram determines if a sentence is a pangram, which is a sentence
+// using every letter of the alphabet at least once.
 package pangram
 
 import (
@@ -15,6 +17,7 @@ func removeNonLowerAlphas(s string) string {
 	return result.String()
 }
 
+// IsPangram returns a boolean based on whether the passed in string is a pangram.
 func IsPangram(s string) bool {
 	letters := make(map[rune]bool)
 
