@@ -5,7 +5,7 @@ func OvenTime() int {
 }
 
 func RemainingOvenTime(t int) int {
-	return 40 - t
+	return OvenTime() - t
 }
 
 func PreparationTime(l int) int {
@@ -13,5 +13,5 @@ func PreparationTime(l int) int {
 }
 
 func ElapsedTime(l, t int) int {
-	return PreparationTime(l) + (40 - RemainingOvenTime(t))
+	return PreparationTime(l) + (OvenTime() - RemainingOvenTime(t))
 }
