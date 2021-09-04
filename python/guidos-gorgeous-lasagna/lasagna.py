@@ -1,3 +1,7 @@
+"""
+this module is related to preparation time of a lasagna
+"""
+
 EXPECTED_BAKE_TIME = 40
 PREPARATION_TIME = 2
 
