@@ -35,7 +35,8 @@ export function setItem(cards, position, replacementCard) {
  * @returns {number[]} the cards with the newCard applied
  */
 export function insertItemAtTop(cards, newCard) {
-  cards.push(newCard);
+  // cards.push(newCard);
+  cards[cards.length] = newCard;
   return cards;
 }
 
@@ -48,7 +49,13 @@ export function insertItemAtTop(cards, newCard) {
  * @returns {number[]} the cards without the removed card
  */
 export function removeItem(cards, position) {
-  cards.splice(position, 1);
+  // cards.splice(position, 1);
+  // return cards;
+  if(checkSizeOfStack(cards, position)) {
+    cards.pop();
+  } else {
+    cards = cards.slice(0, position).concat(cards.slice(position+1));
+  }
   return cards;
 }
 
@@ -60,8 +67,9 @@ export function removeItem(cards, position) {
  * @returns {number[]} the cards without the removed card
  */
 export function removeItemFromTop(cards) {
-  cards.pop();
-  return cards;
+  // cards.pop();
+  // return cards;
+  return removeItem(cards, cards.length);
 }
 
 /**
@@ -85,8 +93,9 @@ export function insertItemAtBottom(cards, newCard) {
  * @returns {number[]} the cards without the removed card
  */
 export function removeItemAtBottom(cards) {
-  cards.shift();
-  return cards;
+  // cards.shift();
+  // return cards;
+  return removeItem(cards, 0);
 }
 
 /**
@@ -98,5 +107,5 @@ export function removeItemAtBottom(cards) {
  * @returns {boolean} true if there are exactly stackSize number of cards, false otherwise
  */
 export function checkSizeOfStack(cards, stackSize) {
-  return cards.length == stackSize;
+  return cards.length === stackSize;
 }
