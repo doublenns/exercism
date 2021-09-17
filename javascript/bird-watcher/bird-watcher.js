@@ -29,11 +29,12 @@ export function birdsInWeek(birdsPerDay, week) {
   const daysPerWeek = 7;
   let end = week * daysPerWeek;
   let start = end - daysPerWeek;
-  let total = 0;
-  for (let i = start; i < end; i++) {
-    total += birdsPerDay[i];
-  }
-  return total;
+  return totalBirdCount(birdsPerDay.slice(start, end));
+  // let total = 0;
+  // for (let i = start; i < end; i++) {
+  //   total += birdsPerDay[i];
+  // // }
+  // return total;
 }
 
 /**
