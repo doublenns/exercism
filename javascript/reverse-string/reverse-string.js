@@ -1,9 +1,10 @@
 export const reverseString = (str) => {
   // Built-in functions
-  let splitString = str.split("");
-  let reversedArray = splitString.reverse();
-  let joinedArray = reversedArray.join("");
-  return joinedArray;
+  // let splitString = str.split("");
+  // let reversedArray = splitString.reverse();
+  // let joinedArray = reversedArray.join("");
+  // return joinedArray;
+  return str.split("").reverse().join("");
 
   // Multiple assignment using array destructuring
   // let [i, j] = [0, str.length];
