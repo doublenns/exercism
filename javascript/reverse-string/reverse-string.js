@@ -4,7 +4,9 @@ export const reverseString = (str) => {
   // let reversedArray = splitString.reverse();
   // let joinedArray = reversedArray.join("");
   // return joinedArray;
-  return str.split("").reverse().join("");
+
+  // One-liner of above
+  // return str.split("").reverse().join("");
 
   // Multiple assignment using array destructuring
   // let [i, j] = [0, str.length];
@@ -15,4 +17,11 @@ export const reverseString = (str) => {
   //   j--;
   // }
   // return splitString.join("");
+
+  // Decrementing for loop
+  let reversed = ""
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
+  }
+  return reversed;
 }
