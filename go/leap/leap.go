@@ -3,12 +3,13 @@ package leap
 
 // IsLeapYear returns a boolean indiciating whether year i is a leap year or not.
 func IsLeapYear(y int) bool {
-	if y%400 == 0 {
-		return true
-	} else if y%100 == 0 {
-		return false
-	} else if y%4 == 0 {
-		return true
-	}
-	return false
+	// if y%400 == 0 {
+	// 	return true
+	// } else if y%100 == 0 {
+	// 	return false
+	// } else if y%4 == 0 {
+	// 	return true
+	// }
+	// return false
+	return y%400 == 0 || y%4 == 0 && y%100 != 0
 }
