@@ -26,8 +26,11 @@ export const reverseString = (str) => {
   // return reversed;
 
   // Recursion
-  if (str === "")
-    return "";
-  else
-    return reverseString(str.substr(1)) + str.charAt(0);
+  // if (str === "")
+  //   return "";
+  // else
+  //   return reverseString(str.substr(1)) + str.charAt(0);
+
+  // One-line recursion using ternary/conditional operator
+  return (str === '') ? '' : reverseString(str.substr(1)) + str.charAt(0);
 }
