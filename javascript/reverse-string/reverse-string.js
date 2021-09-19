@@ -19,9 +19,15 @@ export const reverseString = (str) => {
   // return splitString.join("");
 
   // Decrementing for loop
-  let reversed = ""
-  for (let i = str.length - 1; i >= 0; i--) {
-    reversed += str[i];
-  }
-  return reversed;
+  // let reversed = ""
+  // for (let i = str.length - 1; i >= 0; i--) {
+  //   reversed += str[i];
+  // }
+  // return reversed;
+
+  // Recursion
+  if (str === "")
+    return "";
+  else
+    return reverseString(str.substr(1)) + str.charAt(0);
 }
