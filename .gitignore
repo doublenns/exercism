@@ -5,3 +5,10 @@ HINTS.md
 .pytest_cache
 __pycache__
 node_modules
+
+# Dart Specific
+.dart_tool/
+.packages
+build/
+pubspec.lock
+doc/api/
