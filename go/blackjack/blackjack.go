@@ -40,9 +40,9 @@ func LargeHand(isBlackjack bool, dealerScore int) string {
 	switch {
 	case !isBlackjack:
 		choice = "P"
-	case isBlackjack && dealerScore < 10:
+	case dealerScore < 10:
 		choice = "W"
-	case isBlackjack && dealerScore >= 10:
+	case dealerScore >= 10:
 		choice = "S"
 	}
 	return choice
