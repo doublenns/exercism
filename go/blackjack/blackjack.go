@@ -31,18 +31,15 @@ func ParseCard(card string) int {
 
 // IsBlackjack returns true if the player has a blackjack, false otherwise.
 func IsBlackjack(card1, card2 string) bool {
-	if (ParseCard(card1) + ParseCard(card2)) == 21 {
-		return true
-	}
-	return false
+	return ParseCard(card1)+ParseCard(card2) == 21
 }
 
 // LargeHand implements the decision tree for hand scores larger than 20 points.
 func LargeHand(isBlackjack bool, dealerScore int) string {
 	switch {
-	case isBlackjack == false:
+	case !isBlackjack:
 		return "P"
-	case isBlackjack == true && dealerScore < 10:
+	case isBlackjack && dealerScore < 10:
 		return "W"
 	// Cleaner to show the actual boolean statement than using a default statement
 	// However, compiler complains about not having a default return
