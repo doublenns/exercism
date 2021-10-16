@@ -36,30 +36,30 @@ func IsBlackjack(card1, card2 string) bool {
 
 // LargeHand implements the decision tree for hand scores larger than 20 points.
 func LargeHand(isBlackjack bool, dealerScore int) string {
+	var choice string
 	switch {
 	case !isBlackjack:
-		return "P"
+		choice = "P"
 	case isBlackjack && dealerScore < 10:
-		return "W"
-	// Cleaner to show the actual boolean statement than using a default statement
-	// However, compiler complains about not having a default return
-	// case isBlackjack == true && dealerScore >= 10:
-	default:
-		return "S"
+		choice = "W"
+	case isBlackjack && dealerScore >= 10:
+		choice = "S"
 	}
+	return choice
 }
 
 // SmallHand implements the decision tree for hand scores with less than 21 points.
 func SmallHand(handScore, dealerScore int) string {
+	var choice string
 	switch {
 	case handScore >= 17:
-		return "S"
+		choice = "S"
 	case handScore <= 11:
-		return "H"
+		choice = "H"
 	case dealerScore >= 7:
-		return "H"
-	// case dealerScore <7:
-	default:
-		return "S"
+		choice = "H"
+	case dealerScore < 7:
+		choice = "S"
 	}
+	return choice
 }
