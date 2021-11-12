@@ -10,9 +10,9 @@ const chessboardSquareCount = 64
 
 func Square(number int) (uint64, error) {
 	if number <= 0 {
-		return 0, errors.New("can't have 0 or less chess board squares")
+		return uint64(0), errors.New("can't have 0 or less chess board squares")
 	} else if number > chessboardSquareCount {
-		return 0, fmt.Errorf("there are only %d squares on a chess board", chessboardSquareCount)
+		return uint64(0), fmt.Errorf("there are only %d squares on a chess board", chessboardSquareCount)
 	}
 	result := math.Pow(2, float64(number-1))
 	return uint64(result), nil
