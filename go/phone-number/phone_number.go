@@ -1,3 +1,4 @@
+// Package phone number cleans up user-entered phone numbers so that they can be sent SMS messages.
 package phonenumber
 
 import (
@@ -6,6 +7,7 @@ import (
 	"strings"
 )
 
+// removeNonNumerics returns an input string after removing all non-numeric characters.
 func removeNonNumerics(phoneNumber string) string {
 	var result strings.Builder
 	for i := 0; i < len(phoneNumber); i++ {
@@ -18,15 +20,18 @@ func removeNonNumerics(phoneNumber string) string {
 	return result.String()
 }
 
+// Number cleans up differently formatted telephone numbers by removing punctuation and the country
+// code (1) if present.
 func Number(phoneNumber string) (string, error) {
 	raw := removeNonNumerics(phoneNumber)
 
 	if len(raw) > 11 || len(raw) < 10 {
 		return "", errors.New("not a valid phone number length")
-	} else if len(raw) == 11 {
+	} else if len(raw) == 11 { // A length of 11 means a phone number + country code
 		if raw[0] != '1' {
 			return "", errors.New("not a valid phone number country code")
 		} else {
+			// Remove the country code from the phone number
 			raw = raw[1:]
 		}
 	}
@@ -38,6 +43,7 @@ func Number(phoneNumber string) (string, error) {
 	return raw, nil
 }
 
+// AreaCode returns only th area code of the input phone number
 func AreaCode(phoneNumber string) (string, error) {
 	raw, err := Number(phoneNumber)
 	if err != nil {
@@ -47,6 +53,7 @@ func AreaCode(phoneNumber string) (string, error) {
 	return raw[0:3], nil
 }
 
+// Format produces the output like "(613) 995-0253"
 func Format(phoneNumber string) (string, error) {
 	raw, err := Number(phoneNumber)
 	if err != nil {
