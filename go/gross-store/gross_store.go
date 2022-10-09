@@ -32,11 +32,11 @@ func RemoveItem(bill, units map[string]int, item, unit string) bool {
 		if quantity, ok := bill[item]; ok {
 			if quantity < num {
 				return false
-			} else if quantity == num {
-				delete(bill, item)
-				return true
 			} else {
 				bill[item] -= num
+				if bill[item] == 0 {
+					delete(bill, item)
+				}
 				return true
 			}
 		}
