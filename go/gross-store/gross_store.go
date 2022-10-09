@@ -28,12 +28,16 @@ func AddItem(bill, units map[string]int, item, unit string) bool {
 
 // RemoveItem removes an item from customer bill.
 func RemoveItem(bill, units map[string]int, item, unit string) bool {
+	// Check if customer supplied correct unit in plain English terms
 	if num, ok := units[unit]; ok {
+		// Check if the item is even in the bill
 		if quantity, ok := bill[item]; ok {
+			// Can't remove more items than currently billed for
 			if quantity < num {
 				return false
 			} else {
 				bill[item] -= num
+				// Simplify end bill by removing all items w/ quanitty of 0
 				if bill[item] == 0 {
 					delete(bill, item)
 				}
