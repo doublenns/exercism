@@ -3,7 +3,7 @@ package elon
 import "fmt"
 
 func (c *Car) Drive() {
-	if c.batteryDrain < c.battery {
+	if c.batteryDrain <= c.battery {
 		c.battery -= c.batteryDrain
 		c.distance += c.speed
 	}
