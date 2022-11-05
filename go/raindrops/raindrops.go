@@ -1,7 +1,7 @@
 package raindrops
 
 import (
-	"fmt"
+	"strconv"
 	"strings"
 )
 
@@ -24,7 +24,7 @@ func Convert(number int) string {
 	}
 
 	if result.String() == "" {
-		return fmt.Sprint(number)
+		return strconv.Itoa(number)
 	}
 	return result.String()
 }
