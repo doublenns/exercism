@@ -1,9 +1,11 @@
+// Package scrabble generates the scrabble score of a given word.
 package scrabble
 
 import (
 	"unicode"
 )
 
+// letterValue returns the Scrabble score for a given letter.
 func letterValue(char rune) (value int) {
 	switch unicode.ToUpper(char) {
 	case 'A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T':
@@ -25,6 +27,7 @@ func letterValue(char rune) (value int) {
 	return
 }
 
+// Score returns the Scrabble score from a given word.
 func Score(word string) int {
 	var result int
 
