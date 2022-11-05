@@ -1,6 +1,9 @@
 package raindrops
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 var conversions = []struct {
 	factor int
@@ -12,16 +15,16 @@ var conversions = []struct {
 }
 
 func Convert(number int) string {
-	var result string
+	var result strings.Builder
 
 	for _, c := range conversions {
 		if number%c.factor == 0 {
-			result += c.sound
+			result.WriteString(c.sound)
 		}
 	}
 
-	if result == "" {
+	if result.String() == "" {
 		return fmt.Sprint(number)
 	}
-	return result
+	return result.String()
 }
