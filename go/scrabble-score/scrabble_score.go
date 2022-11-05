@@ -1,11 +1,11 @@
 package scrabble
 
 import (
-	"strings"
+	"unicode"
 )
 
 func letterValue(char rune) (value int) {
-	switch char {
+	switch unicode.ToUpper(char) {
 	case 'A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T':
 		value = 1
 	case 'D', 'G':
@@ -26,10 +26,9 @@ func letterValue(char rune) (value int) {
 }
 
 func Score(word string) int {
-	u := strings.ToUpper(word)
 	var result int
 
-	for _, r := range u {
+	for _, r := range word {
 		result += letterValue(r)
 	}
 
