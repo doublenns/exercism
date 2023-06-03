@@ -66,4 +66,4 @@ def exchangeable_value(budget, exchange_rate, spread, denomination):
     additional_fee = exchange_rate * (spread/100)
     effective_exchange_rate = exchange_rate + additional_fee
     raw_exchange = exchange_money(budget, effective_exchange_rate)
-    return (get_number_of_bills(raw_exchange, denomination) * denomination)
+    return get_number_of_bills(raw_exchange, denomination) * denomination
