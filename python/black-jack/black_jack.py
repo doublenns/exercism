@@ -18,7 +18,7 @@ def value_of_card(card):
 
     result = 0
 
-    if card == 'J' or card == 'Q' or card == 'K':
+    if card in ('J', 'Q', 'K'):
         result = 10
     elif card == 'A':
         result = 1
