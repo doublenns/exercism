@@ -53,8 +53,8 @@ def letter_grades(highest):
 
     increment = (highest - 40) / 4
     spread = []
-    for i in range(4):
-        spread.append(int(41 + (increment * i)))
+    for index in range(4):
+        spread.append(int(41 + (increment * index)))
     return spread
 
 
