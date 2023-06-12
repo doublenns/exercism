@@ -59,6 +59,6 @@ def clean_up(combined_record_group):
 
     report = """"""
     for record in combined_record_group:
-        cleaned = (record[0], record[2], record[3], record[4])
+        cleaned = (record[0], ) + record[2:]
         report += f"{cleaned}\n"
     return report
