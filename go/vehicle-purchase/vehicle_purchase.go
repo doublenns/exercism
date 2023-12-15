@@ -19,7 +19,7 @@ func CalculateResellPrice(originalPrice, age float64) float64 {
 	var discount float64
 	if age >= 10 {
 		discount = .5
-	} else if age <3 {
+	} else if age < 3 {
 		discount = .8
 	} else {
 		discount = .7
