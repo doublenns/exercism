@@ -9,41 +9,39 @@ var tenCards = map[string]bool{
 
 // ParseCard returns the integer value of a card following blackjack ruleset.
 func ParseCard(card string) int {
-	var result int
-
 	switch {
 	case card == "ace":
-		result = 11
+		return 11
 	case card == "two":
-		result = 2
+		return 2
 	case card == "three":
-		result = 3
+		return 3
 	case card == "four":
-		result = 4
+		return 4
 	case card == "five":
-		result = 5
+		return 5
 	case card == "six":
-		result = 6
+		return 6
 	case card == "seven":
-		result = 7
+		return 7
 	case card == "eight":
-		result = 8
+		return 8
 	case card == "nine":
-		result = 9
+		return 9
 	case tenCards[card]:
-		result = 10
+		return 10
 	default:
-		result = 0
+		return 0
 	}
-	return result
 }
 
 // FirstTurn returns the decision for the first turn, given two cards of the
 // player and one card of the dealer.
 func FirstTurn(card1, card2, dealerCard string) string {
 	var (
-		result string
-
+		// Using this `result` variable instead of setting a default switch case
+		// in favor of more explicit case statements
+		result   string
 		strategy = map[string]string{
 			"Stand": "S",
 			"Hit":   "H",
