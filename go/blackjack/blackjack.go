@@ -9,26 +9,27 @@ var tenCards = map[string]bool{
 
 // ParseCard returns the integer value of a card following blackjack ruleset.
 func ParseCard(card string) int {
-	switch {
-	case card == "ace":
+	switch card {
+	case "ace":
 		return 11
-	case card == "two":
+	case "two":
 		return 2
-	case card == "three":
+	case "three":
 		return 3
-	case card == "four":
+	case "four":
 		return 4
-	case card == "five":
+	case "five":
 		return 5
-	case card == "six":
+	case "six":
 		return 6
-	case card == "seven":
+	case "seven":
 		return 7
-	case card == "eight":
+	case "eight":
 		return 8
-	case card == "nine":
+	case "nine":
 		return 9
-	case tenCards[card]:
+	// case tenCards[card]:
+	case "ten", "jack", "queen", "king":
 		return 10
 	default:
 		return 0
