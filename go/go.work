@@ -5,5 +5,6 @@ use (
 	./bird-watcher
 	./blackjack
 	./interest-is-interesting
+	./lasagna-master
 	./need-for-speed
 )
