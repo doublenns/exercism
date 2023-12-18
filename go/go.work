@@ -4,5 +4,6 @@ use (
 	./animal-magic
 	./bird-watcher
 	./blackjack
+	./interest-is-interesting
 	./need-for-speed
 )
