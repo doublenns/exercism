@@ -4,6 +4,7 @@ use (
 	./animal-magic
 	./bird-watcher
 	./blackjack
+	./booking-up-for-beauty
 	./interest-is-interesting
 	./lasagna-master
 	./need-for-speed
