@@ -5,6 +5,7 @@ use (
 	./bird-watcher
 	./blackjack
 	./booking-up-for-beauty
+	./gross-store
 	./interest-is-interesting
 	./lasagna-master
 	./need-for-speed
