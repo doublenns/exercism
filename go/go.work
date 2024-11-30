@@ -10,4 +10,5 @@ use (
 	./vehicle-purchase
 	./party-robot
 	./card-tricks
+	./bird-watcher
 )
