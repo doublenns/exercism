@@ -8,4 +8,5 @@ use (
 	./cars-assemble
 	./welcome-to-tech-palace
 	./vehicle-purchase
+	./party-robot
 )
