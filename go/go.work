@@ -7,4 +7,5 @@ use (
 	./weather-forecast
 	./cars-assemble
 	./welcome-to-tech-palace
+	./vehicle-purchase
 )
