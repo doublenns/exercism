@@ -4,4 +4,5 @@ use (
 	./hello-world
 	./lasagna
 	./annalyns-infiltration
+	./weather-forecast
 )
