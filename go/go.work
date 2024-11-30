@@ -9,4 +9,5 @@ use (
 	./welcome-to-tech-palace
 	./vehicle-purchase
 	./party-robot
+	./card-tricks
 )
