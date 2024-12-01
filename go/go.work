@@ -11,4 +11,6 @@ use (
 	./party-robot
 	./card-tricks
 	./bird-watcher
+	./interest-is-interesting
+	./blackjack
 )
