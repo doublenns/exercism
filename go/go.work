@@ -13,4 +13,5 @@ use (
 	./bird-watcher
 	./interest-is-interesting
 	./blackjack
+	./gross-store
 )
